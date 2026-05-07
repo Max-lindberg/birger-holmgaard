@@ -1,0 +1,66 @@
+{
+  "id": "default-craftsman",
+  "name": "Default Craftsman",
+  "description": "Klassisk dansk håndværker-template med hero-pattern, services-grid, team-sektion og kundeudtalelser. Oprindeligt bygget til Snedkerfirmaet Ly'sén i Rødovre.",
+  "industries_fit": ["snedker", "tømrer", "murer", "maler", "tagdækker", "vvs", "elektriker", "mekaniker"],
+  "style": "classic",
+  "brand_placeholder": {
+    "initials": "SL",
+    "note": "Hardcoded i `<span class=\"text-secondary font-bold text-xl\">SL</span>` på alle sider — generate-preprocess erstatter med firmaets initialer beregnet fra navnet."
+  },
+  "old_brand_strings": [
+    "Snedkerfirmaet Ly'sén",
+    "Snedkerfirmaet Ly&#39;sén",
+    "Snedkerfirmaet",
+    "Ly'sén",
+    "Ly&#39;sén",
+    "snedkerfirmaet@live.dk",
+    "Rødovre",
+    "20 81 59 88",
+    "20815988",
+    "+4520815988"
+  ],
+  "pages": [
+    {"file": "index.html", "purpose": "forside med hero-pattern, services-teaser, om-os, testimonials og CTA"},
+    {"file": "services.html", "purpose": "services-side med detaljerede ydelses-cards"},
+    {"file": "projekter.html", "purpose": "projekt-galleri med filter-bar (filter er rent visuelt — generate-stadiet wirer det op)"},
+    {"file": "om-os.html", "purpose": "om-os med historie, værdier og team"},
+    {"file": "kontakt.html", "purpose": "kontakt med formular og kontakt-info"}
+  ],
+  "color_locations": [
+    {
+      "file": "*.html",
+      "type": "tailwind-config",
+      "selector": "tailwind.config.theme.extend.colors",
+      "current_values": {
+        "primary": "#1a1a1a",
+        "secondary": "#c0c0c0",
+        "accent": "#333333",
+        "light": "#f5f5f5",
+        "medium": "#808080"
+      }
+    },
+    {
+      "file": "index.html",
+      "type": "inline-style-block",
+      "selector": ".hero-pattern background-image (linear-gradient)",
+      "current_values": {
+        "pattern_stripe": "#1a1a1a"
+      },
+      "note": "Diagonal stripe-mønster med 3% opacity bag hero — bruger primary-hex hardcoded i CSS gradient"
+    }
+  ],
+  "font_locations": [
+    {
+      "file": "*.html",
+      "type": "google-fonts-link",
+      "current": null,
+      "note": "Ingen Google Fonts loaded i template'en — generate-preprocess injicerer <link> baseret på variation.font_heading/font_body"
+    }
+  ],
+  "image_slots": [
+    {"file": "index.html", "context": "hero baggrund", "current_src": "images/hero-background.jpg", "suggested_keyword": "carpenter workshop"},
+    {"file": "index.html", "context": "om-os team-billede", "current_src": "images/team.jpg", "suggested_keyword": "craftsman team workshop"},
+    {"file": "index.html", "context": "logo (bevares — preprocess springer 'logo' over)", "current_src": "images/logo.jpg"}
+  ]
+}

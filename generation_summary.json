@@ -1,0 +1,12 @@
+{
+  "preprocess": {
+    "colors": 31,
+    "radius": 97,
+    "fonts_added": 5,
+    "brand_replaced": 57,
+    "images_replaced": 15,
+    "files": 5,
+    "logo_replaced": 5,
+    "initials_replaced": 5
+  }
+}
